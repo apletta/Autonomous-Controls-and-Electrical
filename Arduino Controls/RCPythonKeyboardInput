@@ -1,0 +1,84 @@
+#include <Servo.h>
+
+Servo servo;
+
+Servo esc;
+
+const byte numChars = 32;
+char receivedChars[numChars];
+String command = receivedChars;
+
+boolean newData = false;
+
+void setup() {
+    Serial.begin(9600);
+    Serial.println("<Ready to Drive>");
+    servo.attach(9);
+    esc.attach(3);
+}
+
+
+
+void loop() {
+    recvWithStartEndMarkers();
+    execCommand();
+}
+
+void recvWithStartEndMarkers() {
+    static boolean recvInProgress = false;
+    static byte ndx = 0;
+    char startMarker = '<';
+    char endMarker = '>';
+    char rc;
+ 
+  if (Serial.available() > 0) {
+    while (Serial.available() > 0 && newData == false) {
+        rc = Serial.read();
+
+        if (recvInProgress == true) {
+            if (rc != endMarker) {
+                receivedChars[ndx] = rc;
+                ndx++;
+                if (ndx >= numChars) {
+                    ndx = numChars - 1;
+                }
+            }
+            else {
+                receivedChars[ndx] = '\0'; // terminate the string
+                recvInProgress = false;
+                ndx = 0;
+                newData = true;
+            }
+        }
+
+        else if (rc == startMarker) {
+            recvInProgress = true;
+        }
+    }
+  }
+}
+
+void execCommand() {
+    if (newData == true) {
+        Serial.print("Current Command:  ");
+        String command = receivedChars;
+        Serial.println(command);
+        newData = false;
+
+/* This is where we put all the stuff that changes when a command is received */
+        
+        if (command.substring(0, 1) == "S") {
+          //Serial.print("Setting steering to "); 
+          //Serial.println(command.substring(1, 4).toInt());
+          servo.write(command.substring(1, 4).toInt());
+        } else if (command.substring(0, 1) == "T") {
+          //Serial.print("Turning throttle to ");
+          //Serial.println(command.substring(1, 4).toInt());
+          esc.write(command.substring(1, 4).toInt());
+        }
+        //Serial.println(command.substring(1, 4));
+
+/* Just between there and here */
+    
+    }
+}

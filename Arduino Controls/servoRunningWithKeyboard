@@ -1,0 +1,42 @@
+// Sweep
+// by BARRAGAN <http://barraganstudio.com> 
+// This example code is in the public domain.
+
+
+#include <Servo.h> 
+ 
+Servo steering;  // create servo object to control a servo 
+                // a maximum of eight servo objects can be created
+
+ 
+int angle = 90;    // variable to store the servo position 
+
+String command = "";
+ 
+void setup() 
+{ 
+  Serial.begin(9600);
+  Serial.println("Give an angle (60 - 120) :: ");
+  steering.attach(3);  // attaches the servo on pin 9 to the servo object 
+} 
+void loop() 
+{ 
+  if(Serial.available() > 0) {
+    command = Serial.readString();
+    if(command == "l")
+      angle += 10;
+    else if(command == "r")
+      angle -= 10;
+    //angle = Serial.parseInt();
+    Serial.println("Changing Speed : " + angle);
+  }
+    steering.write(checker(angle));
+} 
+
+int checker(int num) {
+  if(num > 130)
+    return 130;
+  else if(num < 60)
+    return 60;
+  return num;
+}
