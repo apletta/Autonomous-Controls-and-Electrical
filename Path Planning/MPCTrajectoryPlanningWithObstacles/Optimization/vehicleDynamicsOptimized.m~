@@ -1,0 +1,72 @@
+function state = vehicleDynamicsOptimized(track,car,N,dt)
+    
+    initState = car.state;
+    width = 5;
+    
+    x0 = repmat([0;0],1,N);
+    A = [];
+    B = [];
+    Aeq = [];
+    Beq = [];
+    LB = repmat([car.amin;car.amin],1,N);
+    UB = repmat([car.amax;car.amax],1,N);
+    nonlcon = [];
+    options = optimoptions('fmincon');
+    options.MaxFunctionEvaluations = 50000;
+    options.Algorithm = 'sqp';
+    options.Display = 'none';
+    %options.StepTolerance = 1e-15;
+
+    result = fmincon(@objective,x0,A,B,Aeq,Beq,LB,UB,nonlcon,options);
+    [~,state] = objective(result);
+    
+    plot(state(1,:),state(2,:))
+    state = state(:,2);
+    pause(.1)
+    
+    function [c,ceq] = nonlincon(x)
+        ceq = [];
+        c(1) = vecnorm([x(1);x(2)]) - 1;
+    end
+    
+    function [cost,state] = objective(x)
+        vecnorm(x)
+        state = initState;
+        
+        for i = 1:N
+            state(:,end+1) = getState(state(:,end), x(:,i));
+        end
+%         
+        [~,d,~] = distance2curve(track.xy',[state(1,end),state(2,end)]);
+%         
+        [~,initialIndex] = min(sum(abs([track.x;track.y]-[state(1,1);state(2,1)])));
+        [~,finalIndex] = min(sum(abs([track.x;track.y]-[state(1,end);state(2,end)])));
+%         
+        if d > (width / 2)
+            cost = 100;
+            return;
+        elseif (finalIndex - initialIndex) < 0 || abs(finalIndex - initialIndex) > N*2
+            cost = 10000;
+            return;
+        end
+        s = arclength([track.x(initialIndex:(finalIndex-1)),state(1,end)],[track.y(initialIndex:(finalIndex-1)),state(2,end)]);
+        
+        cost = -s;
+    end
+
+    function state = getState(state,u)
+        MA = [1 0 dt 0;
+            0 1 0 dt;
+            0 0 1 0;
+            0 0 0 1];
+        
+        MB = [dt^2/2 0;
+            0 dt^2/2;
+            dt 0;
+            0 dt];
+        
+        state = MA * state + MB * u;
+        
+        vecnorm([state(3,:);state
+    end
+end

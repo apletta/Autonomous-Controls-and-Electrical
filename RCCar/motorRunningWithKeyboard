@@ -1,0 +1,35 @@
+// Sweep
+// by BARRAGAN <http://barraganstudio.com> 
+// This example code is in the public domain.
+
+
+#include <Servo.h> 
+ 
+Servo motor;  // create servo object to control a servo 
+                // a maximum of eight servo objects can be created
+
+ 
+int speed = 0;    // variable to store the servo position 
+ 
+void setup() 
+{ 
+  Serial.begin(9600);
+  Serial.println("Give a speed (0 - 90) :: ");
+  motor.attach(9);  // attaches the servo on pin 9 to the servo object 
+} 
+void loop() 
+{ 
+  if(Serial.available() > 0) {
+    speed = Serial.parseInt();
+    
+    Serial.println("Changing Speed : " + translate(speed));
+  }
+  Serial.println(speed);
+  motor.write(translate(speed));
+} 
+
+int translate(int num) {
+  if(num + 90 > 180)
+    return 180;
+  return num += 90;
+}
