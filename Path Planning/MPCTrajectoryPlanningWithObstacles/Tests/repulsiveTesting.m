@@ -6,7 +6,8 @@ hold on
 
 track = loadTrack('testTrack2.mat',100,true);
 car = RCCar([track.x(1);track.y(1);1;0]);
-N = 5;
+%repulsive = 
+N = 10;
 dt = 0.1;
 
 stateHistory = [];

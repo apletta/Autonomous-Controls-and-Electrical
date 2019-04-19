@@ -41,4 +41,3 @@ track.xy = points;
 track.len = length(track.xy);
 track = createBoundaries(track);
 track = generateArcParam(track);
-track.s
