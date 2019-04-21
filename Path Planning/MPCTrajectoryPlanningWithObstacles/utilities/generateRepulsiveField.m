@@ -6,7 +6,7 @@ function repulsive = generateRepulsiveField(track)
     
     obstacle = false(nrows, ncols);
     
-    [x, y] = meshgrid (1:ncols, 1:nrows);
+    %[x, y] = meshgrid (1:ncols, 1:nrows);
     
     %% Generate some obstacle
     track.xy = round(track.xy);
@@ -36,18 +36,31 @@ function repulsive = generateRepulsiveField(track)
     d2 = (d/100) + 1;
     
     d0 = 2;
-    nu = 900;
+    nu = 10;
     
     repulsive = nu*((1./d2 - 1/d0).^2);
     
     repulsive (d2 > d0) = 0;
     
+    test = surf(repulsive)
     
-%     %% Display repulsive potential
-%     
+    shading interp
+    light
+    lighting phong
+    view(30,30)
+    
+    [x,y] = gradient(repulsive)
+    
+    %error('test')
+    
+    
+    %% Display repulsive potential
+    
 %     figure;
 %     m = mesh (repulsive);
 %     m.FaceLighting = 'phong';
 %     axis equal;
 %     
 %     title ('Repulsive Potential');
+    
+    error('test')

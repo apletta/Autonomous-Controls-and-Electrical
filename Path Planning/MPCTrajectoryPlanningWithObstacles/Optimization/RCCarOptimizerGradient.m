@@ -1,9 +1,9 @@
-function state = RCCarOptimizer(track,car,N,dt)
+function state = RCCarOptimizerGradient(track,car,n,N,dt)
     
     initState = car.state;
-    width = 2;
+    width = 3;
     
-    x0 = repmat([0;0],1,N);
+    x0 = repmat([-initState(3);-initState(4)],1,N);
     A = [];
     B = [];
     Aeq = [];
@@ -15,7 +15,7 @@ function state = RCCarOptimizer(track,car,N,dt)
     options.MaxFunctionEvaluations = 50000;
     options.Algorithm = 'sqp';
     options.Display = 'none';
-    %options.FiniteDifferenceStepSize = .5;
+    %options.FiniteDifferenceStepSize = 10;
     %options.StepTolerance = 1e-15;
 
     result = fmincon(@objective,x0,A,B,Aeq,Beq,LB,UB,nonlcon,options);
@@ -32,16 +32,18 @@ function state = RCCarOptimizer(track,car,N,dt)
     function [cost,state] = objective(x)
         state = initState;
         
-        for i = 1:N
+        for i = 1:n
             %state(:,end+1) = MA * state(:,end) + MB * x(:,i);
             state(:,end+1) = getState(state(:,end), x(:,i));
         end
-        
-        [~,d,s] = distance2curve(track.xy',[state(1,end),state(2,end)]);
-        if d > (width / 2)
-            cost = 100; 
-            return; 
+        for i = n:N
+            state(:,end+1) = getState(state(:,end), x(:,end));
         end
+            [~,d,s] = distance2curve(track.xy',[state(1,end),state(2,end)]);
+            if d > (width / 2)
+                cost = 100;
+                return;
+            end
 %         
         %[~,initialIndex] = min(sum(abs([track.x;track.y]-[state(1,1);state(2,1)])));
         %[~,finalIndex] = min(sum(abs([track.x;track.y]-[state(1,end);state(2,end)])));
@@ -73,16 +75,13 @@ function state = RCCarOptimizer(track,car,N,dt)
         
         state = MA * state + MB * u;
         
-        vx = state(3); vy = state(4);
-        if vx > v.max
-            vx = car.max
-%         v = vecnorm([state(3);state(4)]);
-%         if v > car.vmax
-%             state(3) = (state(3) / v) * car.vmax;
-%             state(4) = (state(4) / v) * car.vmax;
-%         elseif v < car.vmin
-%             state(3) = (state(3) / v) * car.vmin;
-%             state(4) = (state(4) / v) * car.vmin;
-%         end
+        v = vecnorm([state(3);state(4)]);
+        if v > car.vmax
+            state(3) = (state(3) / v) * car.vmax;
+            state(4) = (state(4) / v) * car.vmax;
+        elseif v < car.vmin
+            state(3) = (state(3) / v) * car.vmin;
+            state(4) = (state(4) / v) * car.vmin;
+        end
     end
 end

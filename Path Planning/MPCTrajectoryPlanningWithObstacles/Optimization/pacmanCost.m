@@ -27,7 +27,11 @@ function state = pacmanCost(track,car,N,dt)
         state = initState;
         
         for i = 1:N
-            state(:,end+1) = getState(state(:,end), x(:,i));
+            [state(:,end+1),isOver] = getState(state(:,end), x(:,i));
+            if isOver
+                cost = 10000;
+                return;
+            end
         end
         
         %vsum = sum(abs(state(3,:)));
@@ -47,10 +51,10 @@ function state = pacmanCost(track,car,N,dt)
         
         s = arclength(track.x(initialIndex:finalIndex),track.y(initialIndex:finalIndex));
         
-        cost = d-s;
+        cost = d;
     end
 
-    function state = getState(state,u)
+    function [state,isOver] = getState(state,u)
         [x,y,psi,v] = splitMatrix(state);
         [a, delta] = splitMatrix(u);
         
@@ -65,9 +69,11 @@ function state = pacmanCost(track,car,N,dt)
         v_ = v + a*dt;
         
         if v_ > car.vmax
-            v_ = car.vmax;
+            isOver = true;
         elseif v_ < car.vmin
-            v_ = car.vmin;
+            isOver = true;
+        else
+            isOver = false;
         end
         
 %         if psi_ > car.dmax

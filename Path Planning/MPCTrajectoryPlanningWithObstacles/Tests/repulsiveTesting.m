@@ -4,9 +4,9 @@ close all
 fig = figure;
 hold on
 
-track = loadTrack('testTrack2.mat',100,true);
+track = loadTrack('testTrack2.mat',1000,true);
 car = RCCar([track.x(1);track.y(1);1;0]);
-%repulsive = 
+repulsive = generateRepulsiveField(track);
 N = 10;
 dt = 0.1;
 
@@ -29,7 +29,8 @@ while true
     end
     
     tic
-    car.state = RCCarOptimizer(track,car,N,dt);
+    car.state = RCCarOptimizerGradient(track,car,N,dt,repulsive);
+    %car.state = RCCarOptimizer(track,car,N,dt,repulsive);
     %car.state = vehicleDynamicsOptimized(track,car,N,dt);
     %car.state = pacmanCost(track,car,N,dt);
     %car.state = cheeseCost(track,car,N,dt);

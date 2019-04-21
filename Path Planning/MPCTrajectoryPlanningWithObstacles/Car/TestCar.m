@@ -6,8 +6,8 @@ function car = TestCar(state)
         car.state = [0;0;0;0];
     end
     
-    car.vmin = -10;
-    car.vmax = 10;
+    car.vmin = -4;
+    car.vmax = 4;
     
     car.amin = -1;
     car.amax = 1;
