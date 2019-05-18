@@ -20,7 +20,7 @@ function [state,isLoopClosed] = mpcOptimizer(track,car,n,N,dt)
     result = fmincon(@objective,x0,A,b,Aeq,beq,LB,UB,nonlcon,options);
     [~,state] = objective(result);
     
-    plot(state(1,:),state(2,:))
+    plot(state(1,:),state(2,:),'.-r','MarkerSize', 5);
     state = state(:,2);
     
     function [c,ceq] = nonlincon(x)
@@ -29,30 +29,16 @@ function [state,isLoopClosed] = mpcOptimizer(track,car,n,N,dt)
         
         state = initState;
         
-        for i = 1:n
-            v_ = state(4,end) + x(1,i)*dt;
-            p_ = state(3,end) + x(2,i)*dt;
+        for i = 1:N
+            if i < n
+                v_ = state(4,end) + x(1,i)*dt;
+                p_ = state(3,end) + x(2,i)*dt;
+            else
+                v_ = state(4,end) + x(1,end)*dt;
+                p_ = state(3,end) + x(2,end)*dt;
+            end
             y_ = state(2,end) + v_*sin(p_)*dt;
             x_ = state(1,end) + v_*cos(p_)*dt;
-            
-            state(:,end+1) = [x_,y_,p_,v_];
-        
-            c(end+1) = v_ - car.vmax;
-            c(end+1) = v_ + car.vmin;
-            c(end+1) = p_ - car.dmax;
-            c(end+1) = p_ + car.dmin;
-            
-            [~,d,~,xyi] = distance2curve(track.xy',[state(1,end),state(2,end)]);
-            c(end+1) = d - width;
-            
-            c(end+1) = (v_^2)/track.r(xyi) - car.lamax;
-        end
-        for i = n:N
-            v_ = state(4,end) + x(1,end)*dt;
-            p_ = state(3,end) + x(2,end)*dt;
-            y_ = state(2,end) + v_*sin(p_)*dt;
-            x_ = state(1,end) + v_*cos(p_)*dt;
-            
             state(:,end+1) = [x_,y_,p_,v_];
             
             c(end+1) = v_ - car.vmax;
@@ -61,7 +47,6 @@ function [state,isLoopClosed] = mpcOptimizer(track,car,n,N,dt)
             c(end+1) = p_ + car.dmin;
             
             [~,d,~,xyi] = distance2curve(track.xy',[state(1,end),state(2,end)]);
-            
             c(end+1) = d - width;
             
             c(end+1) = (v_^2)/track.r(xyi) - car.lamax;
@@ -71,16 +56,14 @@ function [state,isLoopClosed] = mpcOptimizer(track,car,n,N,dt)
     function [cost,state] = objective(x)
         state = initState;
         
-        for i = 1:n
-            v_ = state(4,end) + x(1,i)*dt;
-            p_ = state(3,end) + x(2,i)*dt;
-            y_ = state(2,end) + v_*sin(p_)*dt;
-            x_ = state(1,end) + v_*cos(p_)*dt;
-            state(:,end+1) = [x_,y_,p_,v_];
-        end
-        for i = n:N
-            v_ = state(4,end) + x(1,end)*dt;
-            p_ = state(3,end) + x(2,end)*dt;
+        for i = 1:N
+            if i < n
+                v_ = state(4,end) + x(1,i)*dt;
+                p_ = state(3,end) + x(2,i)*dt;
+            else
+                v_ = state(4,end) + x(1,end)*dt;
+                p_ = state(3,end) + x(2,end)*dt;
+            end
             y_ = state(2,end) + v_*sin(p_)*dt;
             x_ = state(1,end) + v_*cos(p_)*dt;
             state(:,end+1) = [x_,y_,p_,v_];

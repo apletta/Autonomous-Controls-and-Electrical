@@ -9,8 +9,8 @@ function car = TestCar(state)
     car.vmin = -25;
     car.vmax = 25;
     
-    car.amin = -.1;
-    car.amax = .1;
+    car.amin = -1;
+    car.amax = 1;
     
     car.lamax = 1;
     
@@ -19,4 +19,5 @@ function car = TestCar(state)
     
     car.Lf = 10;
     car.Lr = 10;
+    car.L = 20;
     

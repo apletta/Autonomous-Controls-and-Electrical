@@ -7,7 +7,8 @@ function track = loadTrack(trackName,N,isClosed)
     if iscolumn(y); y = y'; end
     if exist('w') && iscolumn(w); w = w'; 
     elseif ~exist('w')
-        w = linspace(1,1,l);
+        width = 3
+        w = linspace(width,width,l);
     end
     
     if isClosed

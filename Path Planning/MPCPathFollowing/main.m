@@ -4,8 +4,9 @@ close all
 fig = figure();
 hold on
 
-track = loadTrack('testTrack1.mat',100,true);
-car = TestCar([track.x(1);track.y(1);0;0]);
+i = 1;
+track = loadTrack('testTrack.mat',100,true);
+car = TestCar([track.x(i);track.y(i);-30;1]);
 
 n = 3; N = 8; dt = .5;
 
@@ -16,22 +17,36 @@ plot(track.yx,track.yy,'.-k')
 his = [];
 
 isLoopClosed = false;
+totalTime = 0;
+elapsedTime = 0;
+
+pause
 
 while true
     if ~ishandle(fig) || isLoopClosed
         break;
     end
     
+    t = tic;
     tic
-    [car.state,isLoopClosed] = mpcOptimizer(track,car,n,N,dt);
+    %[car.state,isLoopClosed] = mpcOptimizer(track,car,n,N,dt);
+    [car.state,isLoopClosed] = mpcNestedOptimizer(track,car,n,N,dt);
+    t = toc(t);
     toc
     
     his(:,end+1) = car.state;
     
-    plot(car.state(1),car.state(2),'.r','MarkerSize',2)
+    plot(car.state(1),car.state(2),'.r','MarkerSize',15)
+    
+    totalTime = totalTime + dt;
+    elapsedTime(end+1) = elapsedTime(end) + t;
     
     drawnow
 end
+
+disp('Lap Time: ' + string(round(totalTime(end),2)))
+disp('Total Elapsed Time: ' + string(round(elapsedTime(end),4)))
+disp('Mean Elapsed Time: ' + string(round(mean(diff(elapsedTime)),4)))
 
 clf
 hold on
