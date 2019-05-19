@@ -1,4 +1,4 @@
-# ROS Examples
+# ROS Commands
 
 This directory is intended to help with different commands within ros. For specific commands, cd into the desired command. There will be images, txt files, and anything else that may be useful if you need help. In addition, there is help on our google drive in the folder labeled "ROS."
 
@@ -14,3 +14,4 @@ This directory is intended to help with different commands within ros. For speci
 
 3. Go onto ros.org and search for your specific command. Most commands are explained in a thorough and straight forward way.
 
+If you learn additional commands, please insert them into the table at the bottom of the specified README.md.

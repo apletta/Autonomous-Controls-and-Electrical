@@ -43,3 +43,9 @@
     * **NOT RECOMMENDED**
     * Purge the registration of any node taht cannot be contacted immediately
     * **Usage:** `rosnode cleanup`
+
+### Acquired knowledge
+
+| Date Added | Note |
+| --- | --- |
+| 5-18-19 | This is an example |

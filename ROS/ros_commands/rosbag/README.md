@@ -57,3 +57,9 @@ This directory is intended to help with the ros command "rosbag."
     * Primarily for bag files that were recorded in earlier versions of ros
     * **Usage:** `rosbag reindex <bag files>`
     * **Ex:** `rosbag reindex example.bag`
+
+### Acquired knowledge
+
+| Date Added | Note |
+| --- | ---|
+| 5-18-19 | This is an example |
