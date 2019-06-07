@@ -27,11 +27,11 @@ Generally, you will have:
    
 Whenever you use your ROS distribution or workspace you need to source them first so any new packages or updates are seen by your system. 
 
-   To source your ros distribution:
+   1. To source your ros distribution:
    
    `$ source /opt/ros/melodic/setup.bash`
    
-   To source your workspace:
+   2. To source your workspace:
    
    `$ source ~/catkin_ws/devel/setup.bash`
    
@@ -52,10 +52,10 @@ Whenever you use your ROS distribution or workspace you need to source them firs
 
 If you're ever unsure of where your ROS distribution and workspace are located, you can check the path using the following command:
 
-    `$ echo $ROS_PACKAGE_PATH`
+    $ echo $ROS_PACKAGE_PATH
     
 and you should get something like:
 
-    `/home/yourusername/catkin_ws/src:/opt/ros/kinetic/share`
+    /home/yourusername/catkin_ws/src:/opt/ros/kinetic/share
     
 The colon separates the path to your workspace and active ROS distribution.
