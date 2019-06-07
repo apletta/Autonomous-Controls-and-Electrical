@@ -6,7 +6,7 @@
 
 rostopic commands can be very helpful in analyzing topic messages to make it easier to connect other nodes to them. Common commands are:
 
-To display live messages on topic:
+To display live messages on topic: \n
 `rostopic echo <topic>`
 
 To display active topics:
