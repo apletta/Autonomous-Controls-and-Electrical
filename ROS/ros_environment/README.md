@@ -24,13 +24,38 @@ Generally, you will have:
    * build = where cmake and make are called to configure and build your packages
    * devel = where executables and libraries go before you install your packages
    * src = where active packages you want to use go
+   
+Whenever you use your ROS distribution or workspace you need to source them first so any new packages or updates are seen by your system. 
 
-If you're ever unsur of where your ROS distribution and workspace are located, you can check the path using the following command:
+   To source your ros distribution:
+   
+   `$ source /opt/ros/melodic/setup.bash`
+   
+   To source your workspace:
+   
+   `$ source ~/catkin_ws/devel/setup.bash`
+   
+   You can either run the following lines in the command prompt whenever you open a terminal. To make them run automatically you can add the lines to your .bashrc file like so:
+   1. Navigate to your .bashrc file
+   `$ vim ~/.bashrc`
+   2. Press `shift+g` to skip to the bottom
+   3. Press `i` to start editing the file and add the lines
+   ex.
+   source /opt/ros/melodic/setup.bash # source ROS distribution
+   source ~/catkin_ws/devel/setup.bash # source workspace
+   
+   4. Press `esc` and then `:` followed by `wq` or `x` to save and exit from your .bashrc file.
+   Now your ROS distribution and workspace will be sourced whenever a new terminal is opened (when your .bashrc file runs). You can change these file paths to source different distributions or workspaces as you need.
+   
+   
+   
+
+If you're ever unsure of where your ROS distribution and workspace are located, you can check the path using the following command:
 
     `$ echo $ROS_PACKAGE_PATH`
     
 and you should get something like:
 
-    `/home/youruser/catkin_ws/src:/opt/ros/kinetic/share`
+    `/home/yourusername/catkin_ws/src:/opt/ros/kinetic/share`
     
 The colon separates the path to your workspace and active ROS distribution.
