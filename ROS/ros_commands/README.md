@@ -15,3 +15,11 @@ This directory is intended to help with different commands within ros. For speci
 3. Go onto ros.org and search for your specific command. Most commands are explained in a thorough and straight forward way.
 
 If you learn additional commands, please insert them into the table at the bottom of the specified README.md.
+
+
+-------------------------------
+Generally, commands can be used to work with the following concepts (taken from the [ROS tutorials wiki](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes)):
+
+![Screenshot](function_overview.png)
+
+To learn more about any of them consult the ROS wiki!
