@@ -13,7 +13,7 @@ Generally, you will have:
    
    `$ mkdir -p ~/catkin_ws/src`
    
-   This will make a workspace with a src file. We make the src file so that we can use catkin_make to build it. If you check the workspace right now you will only see the src folder. Moving back to the top of the workspace and running catkin_make.
+   This will make a workspace with a src file. We make the src file so that we can use catkin_make to build it. If you check the workspace right now you will only see the src folder. Move back to the top of the workspace and running catkin_make.
    
    `$ cd ~/catkin_ws`
    
