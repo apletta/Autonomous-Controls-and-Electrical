@@ -16,6 +16,8 @@ This directory is intended to help with different commands within ros. For speci
 
 If you learn additional commands, please insert them into the table at the bottom of the specified README.md.
 
+
+-------------------------------
 Generally, commands can be used to work with the following concepts (taken from the [ROS tutorials wiki](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes)):
 
 ![Screenshot](function_overview.png)
