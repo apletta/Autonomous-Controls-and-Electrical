@@ -40,9 +40,11 @@ Whenever you use your ROS distribution or workspace you need to source them firs
    `$ vim ~/.bashrc`
    2. Press `shift+g` to skip to the bottom
    3. Press `i` to start editing the file and add the lines
+   
    ex.
-   source /opt/ros/melodic/setup.bash # source ROS distribution
-   source ~/catkin_ws/devel/setup.bash # source workspace
+   
+   `source /opt/ros/melodic/setup.bash # source ROS distribution
+   source ~/catkin_ws/devel/setup.bash # source workspace`
    
    4. Press `esc` and then `:` followed by `wq` or `x` to save and exit from your .bashrc file.
    Now your ROS distribution and workspace will be sourced whenever a new terminal is opened (when your .bashrc file runs). You can change these file paths to source different distributions or workspaces as you need.
