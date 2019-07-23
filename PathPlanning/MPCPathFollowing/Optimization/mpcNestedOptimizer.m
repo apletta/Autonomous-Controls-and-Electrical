@@ -26,7 +26,7 @@ function [state,isLoopClosed] = mpcNestedOptimizer(track,car,n,N,dt)
     result = fmincon(@objective,x0,A,b,Aeq,beq,LB,UB,nonlcon,options);
     [~,state] = objective(result);
     
-    plot(state(1,:),state(2,:),'.-r','MarkerSize', 5);
+%     plot(state(1,:),state(2,:),'.-r','MarkerSize', 5);
     state = state(:,2);
     
     function [c,ceq] = nonlincon(x)
