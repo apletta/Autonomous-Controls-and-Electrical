@@ -1,0 +1,3 @@
+[submodule "RCCar/AutonomousRC"]
+	path = RCCar/AutonomousRC
+	url = https://github.com/AaronYoung5/AutonomousRC.git
