@@ -1,3 +1,5 @@
+#Modified from https://github.com/dasanitaylor/LettersWithTurtles.py/blob/master/TurtleLetters.py
+
 import turtle
 
 def turtleLetter(letter,tur):

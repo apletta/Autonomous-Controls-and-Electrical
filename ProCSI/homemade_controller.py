@@ -1,37 +1,26 @@
-import turtle
+from turtle import *
 
-t = turtle.Turtle()
-t.color("blue")
+color("blue")
 
 def getUserInput():
-  user = raw_input("Enter a command: ")
-  return user
+  userInput = raw_input("Enter a command: ")
+  while userInput not in ["a", "d", "w", "x", "q"]:
+    print("\nPlease enter valid command \n a/d for left/right \n w/x for forward/backward \n q to quit \n")
+    userInput = raw_input("Enter a command: ")
+  return userInput
 
 def move(command):
-  print(command)
   if command=="a":
-    left()
+    setheading(30)
   elif command=="d":
-    right()
+    setheading(-30)
   elif command=="w":
-    forward()
+    forward(100)
   elif command=="x":
-    backward()
-
-def forward():
-    t.forward(100)
-
-def backward():
-    t.backward(100)
-
-def left():
-    t.left(30)
-
-def right():
-    t.right(30)
+    backward(100)
 
 char = ""
 while char != "q":
   char = getUserInput()
   move(char)
-  #print(t.position())
+  print(position())
