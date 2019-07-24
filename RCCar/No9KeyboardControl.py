@@ -10,7 +10,7 @@ minsteering = 70
 defsteering = 100
 maxsteering = 130
 
-ser = serial.Serial('/dev/cu.usbmodem1421', 9600)
+ser = serial.Serial('/dev/cu.usbmodem143101', 9600)
 
 print(ser.readline())
 
