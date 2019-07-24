@@ -11,9 +11,9 @@ def getUserInput():
 
 def move(command):
   if command=="a":
-    setheading(30)
+    left(30)
   elif command=="d":
-    setheading(-30)
+    right(30)
   elif command=="w":
     forward(100)
   elif command=="x":
