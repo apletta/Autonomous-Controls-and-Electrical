@@ -6,4 +6,4 @@ We are a Formula SAE team focused on autonomous driving within [Wisconsin Racing
 
 Follow us on [Facebook](https://www.facebook.com/wisconsinautonomous/), [Instagram](https://www.instagram.com/wisconsinautonomous/), and [LinkedIn](https://www.linkedin.com/company/wisconsin-autonomous/about/)!
 
-![Wisconsin_Autonomous_Logo](https://github.com/apletta/Autonomous-Controls-and-Electrical/Miscellaneous/WA.png)
+![Wisconsin_Autonomous_Logo](https://github.com/apletta/Autonomous-Controls-and-Electrical/blob/master/Miscellaneous/WA.png) ![Wisconsin_Racing_Logo](https://github.com/apletta/Autonomous-Controls-and-Electrical/blob/master/Miscellaneous/wisconsinRacing.png)
