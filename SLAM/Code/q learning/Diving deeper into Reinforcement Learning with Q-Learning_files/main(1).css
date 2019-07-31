@@ -1,0 +1,1101 @@
+body {
+    font-size: 14px
+}
+
+.ellipsis,
+.spin {
+    display: inline-block
+}
+
+.loading,
+.wrapper,
+body,
+html {
+    height: 100%
+}
+
+/*******START HIDDEN SCROLLBAR SCROLL CONTAINERS******/
+/*https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-still-being-able-to-scroll*/
+html { -ms-overflow-style: none;}
+.hsb-srcollable--element {
+    margin-bottom: -1em;
+    max-height: 100%;
+}
+.hsb-srcollable--element, .hsb-srcollable--outer-container, .hsb-srcollable--inner-container {
+    width: 100%;
+    min-height: 90px;
+}
+
+.hsb-srcollable--outer-container {
+    position: relative;
+    overflow: hidden; 
+    max-height: 150px;  
+    width:100%;
+}
+
+.hsb-srcollable--inner-container {
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    line-height: 1.2em;
+    max-height: 100%;
+}
+
+.hsb-srcollable--inner-container::-webkit-scrollbar {
+    display: none;
+}
+/*******END HIDDEN SCROLLBAR SCROLL CONTAINERS******/
+
+#main_general h4,
+.btn {
+    text-transform: uppercase
+}
+
+.select:before,
+.spin {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.powered-by a,
+.social-badge,
+h1 a,
+h2 a,
+h3 a {
+    text-decoration: none !important
+}
+
+body,
+p,
+p.lead {
+    letter-spacing: .43px;
+    font-weight: 400
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #303030;
+    font-weight: 600
+}
+
+h1 a,
+h2 a,
+h3 a {
+    color: #1abc9c
+}
+
+a.disabled,
+a.disabled:hover,
+a.disabled:active,
+a.disabled:focus {
+    color: #ccc
+}
+
+.loading i,
+.orange-text,
+.red-text {
+    color: #1abc9c
+}
+
+.spin {
+    -webkit-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+.loading-view {
+    position: relative
+}
+
+.loading {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 40%
+}
+
+.loading i {
+    opacity: .4;
+    font-size: 5em;
+    position: relative;
+    top: -100px
+}
+
+.ellipsis {
+    max-width: 98%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+footer p {
+    color: #aaa
+}
+
+#main {
+    max-width: 500px;
+    margin: 0 auto
+}
+
+#main_general {
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 60px;
+    line-height: 1.6em
+}
+
+#main_general h3,
+#main_general h4 {
+    margin-top: 1.5em
+}
+
+.select {
+    position: relative
+}
+
+.select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0 !important
+}
+
+.select:before {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    content: "\f35f";
+    font-size: 1.7em;
+    font-family: Ionicons;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: #ccc
+}
+
+label {
+    font-weight: 400;
+    margin-bottom: 0 !important
+}
+
+label input[type=checkbox] {
+    position: relative
+}
+
+label.lead {
+    font-size: 1.25em
+}
+
+.tw {
+    color: #55acee
+}
+
+.pn {
+    color: #cb2027
+}
+
+.gl {
+    color: #dd4b39
+}
+
+.fb {
+    color: #3b5998
+}
+
+.rd {
+    color: #1abc9c
+}
+
+.li {
+    color: #4875B4
+}
+
+.woocommerce-error:before,
+.woocommerce-info:before,
+.woocommerce-message:before {
+    content: none
+}
+
+.woocommerce-error li,
+.woocommerce-info li,
+.woocommerce-message li {
+    text-align: center !important
+}
+
+.powered-by {
+    text-align: center
+}
+
+.alert,
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+    padding: 15px;
+    text-align: center;
+    background: #1abc9c;
+    color: #fff;
+    border: none;
+    z-index: 100000;
+    margin: 0 !important;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: .9;
+    font-size: 1.1em
+}
+
+.alert button {
+    font-size: 14px;
+    padding-top: 6px;
+    opacity: .9;
+    color: #fff !important;
+    text-shadow: none !important
+}
+
+.alert .btn {
+    background: #fff !important;
+    padding: 4px 15px;
+    font-weight: 600 !important;
+    margin: -5.5px 0 -5.5px 5px
+}
+
+.alert .btn:hover {
+    opacity: 0.8
+}
+
+.alert .btn i {
+    font-size: 12px;
+    margin-right: 3px
+}
+
+.alert .btn.icon {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    width: 32px !important;
+    line-height: 1.2
+}
+
+.alert .btn.icon i {
+    font-size: 17px;
+    margin-right: 0
+}
+
+.alert .btn-margin-fix {
+    height: 5px !important;
+    content: " ";
+    width: 100%;
+    display: block;
+    clear: both
+}
+
+.alert .btn.reject {
+    background: 0 0 !important;
+    border: 1px solid #fff;
+    color: #fff;
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+    font-weight: normal !important
+}
+
+.alert.alert-prompt {
+    opacity: 1;
+    top: 0;
+    bottom: auto;
+    background: #ee0979;
+    background: -webkit-linear-gradient(to left, #ee0979, #1abc9c);
+    background: linear-gradient(to left, #ee0979, #1abc9c)
+}
+
+a {
+    color: #aaa
+}
+
+a:active,
+a:focus,
+a:hover {
+    color: #1abc9c
+}
+
+.btn {
+    font-weight: 400 !important;
+    outline: none !important
+}
+
+.btn.btn-default {
+    color: #fff;
+    background: 0 0;
+    border-width: 2px;
+    outline: 0 !important;
+    border-color: #1abc9c;
+    border-radius: 4px !important;
+    background-color: #1abc9c;
+    padding: 8px 14px
+}
+
+.btn.btn-default:active,
+.btn.btn-default:focus,
+.btn.btn-default:hover {
+    border-color: #1abc9c;
+    background: #1abc9c;
+    color: #fff;
+    opacity: 0.8
+}
+
+.btn.btn-basic {
+    background: #eee;
+    border-color: #eee;
+    color: #1abc9c;
+    padding: 8px 14px;
+    border-radius: 4px !important
+}
+
+.btn.btn-basic:active,
+.btn.btn-basic:focus,
+.btn.btn-basic:hover {
+    background: #1abc9c;
+    border-color: #1abc9c;
+    color: #fff
+}
+
+a.button-social-login.button-social-login-google,
+span.social-badge.social-badge-google {
+    background: #4285f4;
+    border-color: #4285f4
+}
+
+a.button-social-login.button-social-login-facebook,
+span.social-badge.social-badge-facebook {
+    background: #3b5998;
+    border-color: #3b5998
+}
+
+a.button-social-login.button-social-login-google,
+span.social-badge.social-badge-google,
+a.button-social-login.button-social-login-facebook,
+span.social-badge.social-badge-facebook {
+    color: #fff !important;
+    text-decoration: none !important
+}
+
+.woocommerce h2 {
+    font-size: 24px;
+    margin: 20px 0 10px
+}
+
+.woocommerce table.my_account_orders {
+    font-size: 14px
+}
+
+.woocommerce table.shop_table {
+    margin-bottom: 0 !important
+}
+
+.woocommerce table.shop_table,
+.woocommerce table.shop_table tbody th,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th {
+    border-color: #eee
+}
+
+.woocommerce-account h1,
+.woocommerce-checkout h1,
+.woocommerce-checkout #customer_details,
+.woocommerce-checkout ul.woocommerce-error {
+    display: none
+}
+
+.woocommerce-checkout.woocommerce-order-received h1 {
+    display: block
+}
+
+.woocommerce-checkout .woocommerce-checkout-review-order {
+    margin-bottom: 80px
+}
+
+.woocommerce table.shop_table,
+.woocommerce-checkout #payment {
+    border-radius: 0 !important;
+    margin-bottom: 20px
+}
+
+.woocommerce-checkout #payment {
+    background: #fff;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee
+}
+
+.woocommerce-checkout #payment ul.payment_methods {
+    background: 0 0
+}
+
+.woocommerce-checkout #payment ul.payment_methods li {
+    position: relative;
+    padding-left: 30px
+}
+
+.woocommerce-checkout #payment ul.payment_methods li .input-radio {
+    position: absolute;
+    top: 8px;
+    left: 0
+}
+
+.woocommerce-checkout #payment ul.payment_methods li.payment_method_paypal .input-radio {
+    top: 16px
+}
+
+.woocommerce-checkout #payment div.payment_box {
+    padding: 0;
+    background: 0 0
+}
+
+.woocommerce-checkout #payment div.payment_box:before {
+    content: none
+}
+
+.woocommerce-checkout #payment div.form-row {
+    padding: 0
+}
+
+.woocommerce-page #payment #place_order {
+    float: none;
+    width: 100%;
+    background: #1abc9c;
+    text-transform: uppercase;
+    padding: 20px 10px;
+    border-radius: 0
+}
+
+.woocommerce-page #payment #place_order:hover {
+    opacity: 0.7
+}
+
+.table>thead>tr>th {
+    border-bottom: none
+}
+
+.table>thead>tr>th .checkbox {
+    margin: 0;
+    position: relative;
+    top: -4px
+}
+
+.table>tbody>tr,
+.table>thead>tr {
+    border-bottom: 1px solid #eee
+}
+
+.table .checkbox,
+.table>tbody>tr:hover {
+    cursor: pointer
+}
+
+.table>tbody>tr>td {
+    border: none;
+    padding-top: 12px
+}
+
+.send-message .choose-list {
+    max-height: 200px;
+    overflow: auto;
+    background: #f4f4f4;
+    padding: 5px
+}
+
+.user-access-form .form-group {
+    overflow: hidden
+}
+
+.user-access-form a.button-social-login:hover {
+    opacity: 0.8
+}
+
+.user-access-form .signin-link-holder,
+.user-access-form .use-password-holder,
+.user-access-form .password-holder,
+.user-access-form .sign-in-password {
+    overflow: hidden;
+    position: relative;
+    padding-top: 1px
+}
+
+.user-access-form .signin-link-holder,
+.user-access-form .use-password-holder {
+    max-height: 9999px;
+    opacity: 1
+}
+
+.user-access-form .password-holder,
+.user-access-form .sign-in-password {
+    max-height: 0px;
+    opacity: 0
+}
+
+.user-access-form .forgot-password {
+    float: right;
+    position: relative;
+    top: -32px;
+    margin-bottom: -32px;
+    right: 10px;
+    z-index: 500
+}
+
+.user-access-form.show-password-field .password-holder,
+.user-access-form.show-password-field .sign-in-password {
+    max-height: 9999px;
+    opacity: 1
+}
+
+.user-access-form.show-password-field .signin-link-holder,
+.user-access-form.show-password-field .use-password-holder {
+    max-height: 0px;
+    opacity: 0
+}
+
+.lead {
+    font-weight: 400 !important
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    background: #fff
+}
+
+.modal-content {
+    box-shadow: none;
+    border: none
+}
+
+.navbar.navbar-default {
+    background: #fff !important;
+    border: none !important;
+    height: 55px !important;
+    margin: 0 !important
+}
+
+.navbar.navbar-default .navbar-collapse {
+    background: #fff;
+    border: none
+}
+
+.navbar.navbar-default .navbar-brand {
+    font-weight: 700;
+    color: #303030;
+    font-weight: 400 !important;
+    padding-top: 16px;
+    padding-top: 17px
+}
+
+.navbar.navbar-default .navbar-brand>i {
+    color: #1abc9c !important
+}
+
+.navbar.navbar-default .btn.btn-default {
+    margin-top: 10px;
+    margin-right: 8px;
+    padding: 5px 10px 4px;
+    color: #fff
+}
+
+.navbar.navbar-default .btn.btn-default:hover,
+.navbar.navbar-default .btn.btn-default:active,
+.navbar.navbar-default .btn.btn-default:focus {
+    border-color: #1abc9c;
+    background: #1abc9c;
+    color: #fff;
+    opacity: 0.8
+}
+
+.navbar.navbar-default .navbar-nav>.open>a,
+.navbar.navbar-default .navbar-nav>.open>a:hover {
+    background: none;
+    color: #1abc9c
+}
+
+.navbar.navbar-default .nav li a {
+    color: #303030
+}
+
+.navbar.navbar-default .nav li a:hover {
+    color: #303030
+}
+
+.navbar.navbar-default .nav li a i {
+    font-size: 1.2em
+}
+
+.navbar.navbar-default .nav li .dropdown-toggle i {
+    font-size: 20px;
+    max-height: 15px;
+    display: inline-block;
+    overflow: hidden
+}
+
+.navbar.navbar-default .nav>li>a {
+    padding-right: 13px;
+    padding-left: 13px
+}
+
+.navbar.navbar-default .dropdown-menu {
+    border-color: #f4f4f4 !important;
+    box-shadow: none !important
+}
+
+.navbar.navbar-default .logout {
+    position: relative
+}
+
+.navbar.navbar-default .logout>span {
+    display: inline-block;
+    width: 15px
+}
+
+.navbar.navbar-default .logout .ion-android-sad,
+.navbar.navbar-default .logout:hover .ion-android-exit,
+.navbar.navbar-default .logout:hover .ion-log-out {
+    display: none
+}
+
+.navbar.navbar-default .logout:hover .ion-android-sad {
+    display: inline
+}
+
+.navbar.navbar-default .navbar-toggle {
+    border: none !important;
+    background: 0 0 !important;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 11px
+}
+
+.navbar.navbar-default .navbar-toggle i {
+    font-size: 1.6em;
+    color: #aaa
+}
+
+.navbar.navbar-default .navbar-toggle .icon-bar {
+    background-color: #303030
+}
+
+.navbar.navbar-default.navbar-static-top .navbar-right {
+    margin-right: 0
+}
+
+.navbar.non-admin .btn.btn-default {
+    color: #fff !important;
+    padding-bottom: 5px
+}
+
+.navbar.non-admin .nav li a {
+    color: #999
+}
+
+.navbar.non-admin .nav li a:hover {
+    color: #1abc9c
+}
+
+body.home h1 {
+    color: #fff;
+    font-size: 2.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700
+}
+
+body.home .hero {
+    padding: 150px 0;
+    height: auto;
+    background: url(../img/hero-boom.jpg) center;
+    background-size: cover
+}
+
+body.home .hero .form-control {
+    border: none !important;
+    background: #fff !important;
+    padding-left: 8px !important
+}
+
+body.home .hero .btn.btn-default {
+    border-color: #fff;
+    color: #fff;
+    background: none;
+    max-width: 500px;
+    margin: 0 auto
+}
+
+body.home .hero:active,
+body.home .hero:focus,
+body.home .hero:hover {
+    background-color: #fff;
+    color: #1abc9c
+}
+
+body.home .steps {
+    padding: 80px 0;
+    height: auto
+}
+
+body.home .step i {
+    font-size: 3em
+}
+
+body.home .step h4 {
+    font-weight: 400
+}
+
+body.home .step p.lead {
+    color: #555;
+    font-size: 18px
+}
+
+.form-control,
+.medium-editor-element p {
+    font-weight: 300
+}
+
+.circle-icon {
+    margin-bottom: 10px;
+    padding: 1em;
+    height: 6.5em;
+    width: 6.5em;
+    border-radius: 50%;
+    background: #ffddd0;
+    color: #fff;
+    display: inline-block
+}
+
+.circle-icon i {
+    color: #1abc9c
+}
+
+.form-group {
+    position: relative
+}
+
+.form-control {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: 0 0 !important;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc !important;
+    border-left: none;
+    font-size: 17px;
+    height: 48px;
+    padding-bottom: 8px;
+    padding-left: 5px !important;
+    resize: none;
+    letter-spacing: .600px
+}
+
+.form-control::placeholder {
+    color: #b0b0b0
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #b0b0b0
+}
+
+.form-control::-moz-placeholder {
+    color: #b0b0b0
+}
+
+.form-control:-ms-input-placeholder {
+    color: #b0b0b0
+}
+
+.form-control:-moz-placeholder {
+    color: #b0b0b0
+}
+
+textarea.form-control {
+    height: 105px;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    -o-transition: all ease .5s;
+    transition: all ease 0.5s
+}
+
+.float-label {
+    padding-top: 17px
+}
+
+.float-label-text {
+    position: absolute;
+    font-size: 75%;
+    left: 5px;
+    opacity: 0.8
+}
+
+.send-hint {
+    padding-top: 5px;
+    margin-top: -28px;
+    padding-bottom: 8px;
+    position: relative;
+    z-index: 200
+}
+
+.medium-editor-toolbar li button {
+    background: #f4f4f4;
+    border: none
+}
+
+.medium-editor-toolbar li+li button {
+    border-left: 1px solid #eee
+}
+
+.medium-editor-placeholder-relative:after,
+.medium-editor-placeholder:after {
+    font-style: normal !important;
+    color: #b0b0b0
+}
+
+.user-access-form a.button-social-login {
+    height: 3em;
+    line-height: 3em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 400;
+    box-shadow: none;
+    text-shadow: none;
+    width: 100%;
+    padding: 0
+}
+
+.user-access-form a.button-social-login .si {
+    height: 3em;
+    width: 3em;
+    background-color: #fff !important
+}
+
+.user-access-form .row.form-row {
+    margin: 0
+}
+
+.user-access-form .row.form-row .col-sm-6 {
+    padding: 0
+}
+
+.user-access-form .first-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 2px solid #fff !important
+}
+
+.user-access-form .last-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.user-access-form .form-control {
+    height: 44px;
+    font-size: 22px
+}
+
+.builder-form h2 {
+    font-size: 1.9em
+}
+
+.builder-form .row {
+    margin: 0 -7.5px
+}
+
+.builder-form .row [class*=col-] {
+    padding: 0 7.5px
+}
+
+.builder-form .color-options {
+    padding: 0;
+    margin: 0 -2.5px
+}
+
+.builder-form .color-options li {
+    display: inline-block;
+    width: 20%;
+    list-style: none;
+    float: left;
+    padding: 0 2.5px
+}
+
+.builder-form .color-options li a {
+    display: block;
+    content: " ";
+    width: 100%
+}
+
+.builder-form .color,
+.builder-form .color-options li a {
+    height: 34px;
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+
+.builder-form .color {
+    border-left: 4px solid #eee
+}
+
+.builder-form .btn.photo-btn {
+    color: #555;
+    text-transform: none;
+    background: #eee;
+    border-radius: 0 !important;
+    margin-top: 5px
+}
+
+.builder-form .btn.photo-btn i {
+    margin-right: 5px
+}
+
+.builder-form .top-input {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 2px solid #fff
+}
+
+.builder-form .bottom-input {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0
+}
+
+.builder-form .middle-input {
+    border-radius: 0;
+    border-bottom: 2px solid #fff
+}
+
+.builder-form .btn.btn-default {
+    padding: 8px;
+    letter-spacing: .04em;
+    font-weight: 600
+}
+
+.close-modal {
+    position: relative;
+    z-index: 300
+}
+
+.close-modal a {
+    color: #aaa;
+    display: block;
+    padding: 20px
+}
+
+.modal-content {
+    background: 0 0
+}
+
+.shown-600 {
+  display: none
+}
+
+@media (min-width: 768px) {
+    .modal-body {
+        padding-top: 100px
+    }
+    .navbar.navbar-default .navbar-nav>li>a {
+        padding-top: 16px;
+        padding-bottom: 16px
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar.navbar-default {
+        background: #fff !important
+    }
+    .navbar.navbar-default .navbar-nav {
+        margin-top: 4px
+    }
+    .navbar.navbar-default .btn.btn-default {
+        margin: 0;
+        border-radius: 0 !important;
+        text-align: left;
+        margin-bottom: 5px
+    }
+    .navbar.navbar-default .btn.btn-default,
+    .navbar.navbar-default .nav>li a {
+        padding: 8px 15px
+    }
+    .navbar.navbar-default .dropdown-toggle {
+        display: none
+    }
+    .navbar.navbar-default .dropdown-menu {
+        display: block !important;
+        position: relative;
+        padding: 0;
+        border: none;
+        width: 100%;
+        background: none
+    }
+    .navbar.navbar-default .dropdown-menu li a,
+    .navbar.navbar-default .dropdown-menu li a:hover {
+        background: none
+    }
+    .list h1 {
+        margin-top: 20px;
+        font-size: 2.5em
+    }
+    .home h1 {
+        font-size: 1.7em !important
+    }
+}
+
+@media (max-width: 699px) {
+    .hidden-729 {
+        display: none !important
+    }
+}
+
+@media (max-width: 650px) {
+    .hidden-680 {
+        display: none !important
+    }
+}
+
+@media (max-width: 570px) {
+    .product-image {
+        margin: 0 -15px
+    }
+    .product.with-bg .product-image {
+        margin-right: 0;
+        margin-left: 0
+    }
+    .hidden-600 {
+        display: none !important
+    }
+    .shown-600 {
+        display: initial;
+    }
+}
+
+
+/*# sourceMappingURL=style.min.css.map */

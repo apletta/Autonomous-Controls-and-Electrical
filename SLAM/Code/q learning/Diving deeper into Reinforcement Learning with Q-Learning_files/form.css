@@ -1,0 +1,263 @@
+.list-page.site-wrapper {
+    display: table;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    padding: 60px 0 !important
+}
+
+.list-page .site-wrapper-inner {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.list-page .site-wrapper-inner>.container {
+    max-width: 550px;
+    margin: 0 auto
+}
+
+.list-page h1 {
+    text-transform: none;
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.5em
+}
+
+.list-page .list-desc {
+    color: #5f5f5f;
+    margin-top: 10px;
+    line-height: 1.5em;
+    padding-bottom: 15px
+}
+
+.list-page .list-signup-form {
+    position: relative;
+    height: 46px;
+    max-width: 435px;
+    margin: 0 auto
+}
+
+.list-page .list-signup-form:before,
+.list-page .list-signup-form:after {
+    content: ' ';
+    display: table;
+    clear: both
+}
+
+.list-page .list-signup-form .signup-input {
+    width: 100%;
+    padding-right: 97px;
+    position: relative;
+    float: left;
+    display: inline-block;
+    border-right: solid #fff 97px
+}
+
+.list-page .list-signup-form .signup-button {
+    position: absolute;
+    right: 0;
+    width: 97px
+}
+
+.list-page .list-signup-form .signup-button span.btn.btn-default {
+    background: #1abc9c;
+    color: #fff;
+    position: relative;
+    border: none !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 45px !important;
+    border-bottom-right-radius: 45px !important;
+    padding: 15px 12px 13px 8px;
+    text-transform: none
+}
+
+.list-page .list-signup-form .signup-button span.btn.btn-default:active,
+.list-page .list-signup-form .signup-button span.btn.btn-default:focus,
+.list-page .list-signup-form .signup-button span.btn.btn-default:hover {
+    opacity: 0.8
+}
+
+.list-page .list-signup-form .signup-button span.success {
+    background: #56de7a !important;
+    border-color: #56de7a !important;
+    color: #fff !important
+}
+
+.list-page .list-signup-form .signup-button .text,
+.list-page .list-signup-form .signup-button .icon {
+    display: inline-block
+}
+
+.list-page .list-signup-form .signup-button .icon {
+    position: relative;
+    font-size: 21px;
+    top: 2px;
+    line-height: 0;
+    margin: -3px 0
+}
+
+.multi-field {
+    width: 100%;
+    left: 0;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease
+}
+
+.multi-field,
+.previous,
+.current {
+    position: absolute;
+    opacity: 0;
+    top: 40px
+}
+
+.seen,
+.previous {
+    top: -40px
+}
+
+.current {
+    top: 0;
+    opacity: 1
+}
+
+.invalid input {
+    border-bottom-color: red !important
+}
+
+.list-share {
+    margin-top: 30px;
+    font-size: 2em
+}
+
+.list-share a {
+    color: #fff;
+    margin-bottom: 0;
+    text-decoration: none !important;
+    margin-right: 3px;
+    color: #303030
+}
+
+.list-share .link-click {
+    margin-top: -15px
+}
+
+.list-share>span {
+    font-weight: 400;
+    margin-right: 3px;
+    font-size: .6em;
+    position: relative;
+    top: -5px
+}
+
+.list-share i {
+    position: relative
+}
+
+.list-share .ion-android-mail {
+    top: 0.5px
+}
+
+.list-share .small {
+    font-size: .4em;
+    display: inline-block;
+    padding-bottom: 8px;
+    vertical-align: middle;
+    margin-left: -2px
+}
+
+.list-share .small::-moz-selection {
+    color: #fff;
+    background: #1abc9c
+}
+
+.list-share .small::selection {
+    color: #fff;
+    background: #1abc9c
+}
+
+.powered-by {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 15px;
+    font-size: 13px
+}
+
+.powered-by a {
+    color: #f39673
+}
+
+.powered-by a i {
+    font-size: 1.5em
+}
+
+.powered-by a>span {
+    position: relative;
+    top: -1px
+}
+
+.powered-by .powered-by a>span strong {
+    font-weight: 400
+}
+
+.powered-by .powered-by a:hover {
+    opacity: 0.7
+}
+
+.as_embed .list-page.site-wrapper {
+    padding: 0 0 !important
+}
+
+.as_embed .list-page h1 {
+    font-size: 32px;
+    line-height: 1.25em
+}
+
+.as_embed .powered-by {
+    font-size: 11px;
+    padding-bottom: 0
+}
+
+@media (min-width: 768px) {
+    .list-desc {
+        font-size: 17px
+    }
+}
+
+@media (max-width: 991px) {
+    .list-desc {
+        margin-top: 13px;
+        margin-bottom: 13px
+    }
+}
+
+@media (max-width: 767px) {
+    .list-desc {
+        font-weight: 400
+    }
+}
+
+@media (max-width: 699px) {
+    .as_embed .list-image img {
+        max-height: 35px !important
+    }
+}
+
+@media (max-height: 340px) {
+    .list-desc-inner {
+        display: none !important
+    }
+}
+
+@media (max-height: 155px) {
+    .powered-by {
+        display: none !important
+    }
+}
+
+
+/*# sourceMappingURL=form.min.css.map */
