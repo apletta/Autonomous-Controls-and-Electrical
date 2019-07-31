@@ -5,3 +5,5 @@ This is the primary repository for the Autonomous Controls and Electrical subtea
 We are a Formula SAE team focused on autonomous driving within [Wisconsin Racing](https://wisconsinracing.org/). 
 
 Follow us on [Facebook](https://www.facebook.com/wisconsinautonomous/), [Instagram](https://www.instagram.com/wisconsinautonomous/), and [LinkedIn](https://www.linkedin.com/company/wisconsin-autonomous/about/)!
+
+![Wisconsin_Autonomous_Logo](https://github.com/apletta/ackermann_nav-ROS/blob/master/README/pics/templates_example_rqt_graph.png)
