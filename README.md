@@ -2,7 +2,7 @@
 
 This is the primary repository for the Autonomous Controls and Electrical subteam for [Wisconsin Autonomous](http://vehicle.slc.engr.wisc.edu/). Stay up to date with our technical info by following our blog, under "Posts" on our website!
 
-We are a Formula SAE team at the University of Wisconsin-Madison focused on autonomous driving. We are a part of [Wisconsin Racing](https://wisconsinracing.org/). 
+We are a Formula SAE team at the University of Wisconsin-Madison focused on autonomous driving. We are a part of [Wisconsin Racing](https://wisconsinautonomous.org/). 
 
 Follow us on [Facebook](https://www.facebook.com/wisconsinautonomous/), [Instagram](https://www.instagram.com/wisconsinautonomous/), and [LinkedIn](https://www.linkedin.com/company/wisconsin-autonomous/about/)!
 
