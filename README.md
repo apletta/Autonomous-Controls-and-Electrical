@@ -1,6 +1,6 @@
 # Autonomous-Controls-and-Electrical
 
-This is the primary repository for the Autonomous Controls and Electrical subteam for [Wisconsin Autonomous](http://vehicle.slc.engr.wisc.edu/). Stay up to date with our technical info by following our blog, under "Posts" on our website!
+This is the primary repository for the Autonomous Controls and Electrical subteam for [Wisconsin Autonomous](https://wisconsinautonomous.org/). Stay up to date with our technical info by following our blog, under "Posts" on our website!
 
 We are a Formula SAE team at the University of Wisconsin-Madison focused on autonomous driving. You can find out more about our team at [our website](https://wisconsinautonomous.org/). 
 
