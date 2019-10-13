@@ -8,7 +8,7 @@ i = 1;
 track = loadTrack('testTrack.mat',100,true);
 car = TestCar([track.x(i);track.y(i);-30;1]);
 
-n = 3; N = 8; dt = .5;
+n = 3; N = 12; dt = .5;
 
 plot(track.x,track.y,'.r')
 plot(track.bx,track.by,'.-k')
