@@ -28,7 +28,6 @@ plt.show(block=False)
 lower_white = np.array([0,0,245])
 upper_white = np.array([255,30,255])
 
-#Hmin-44,Hmax-71;Smin-54,Smax-255,Vmin-63,Vmax-255
 lower_black = np.array([0, 0, 0])
 upper_black = np.array([255, 255, 30])
 
@@ -147,7 +146,7 @@ def YOLO():
     global scaled_height, scaled_width, height, width
 
     configPath = "/home/masonberres/Documents/darknet-master/cfg/yolov3-cones-colab.cfg"
-    weightPath = "/home/masonberres/Documents/darknet-master/weights/prune.weights"
+    weightPath = "/home/masonberres/Documents/darknet-master/weights/yolov3-cones-colab_best.weights"
     metaPath = "/home/masonberres/Documents/darknet-master/cfg/cones.data"
     if not os.path.exists(configPath):
         raise ValueError("Invalid config path `" +
